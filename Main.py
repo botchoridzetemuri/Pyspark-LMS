@@ -1,15 +1,13 @@
-# 1. IMPORTS
 from pyspark.sql import SparkSession
 from pyspark.sql import functions as F
 from pyspark.sql.window import Window
 
-# 2. SETUP THE ENGINE
 spark = SparkSession.builder \
     .appName("Pagila_StepByStep") \
     .config("spark.jars", "/Users/temuribotchoridze/Downloads/postgresql-42.7.11.jar") \
     .getOrCreate()
 
-# 3. SETUP THE DATABASE CONNECTION
+
 def load_table(table_name):
     return spark.read \
         .format("jdbc") \
@@ -20,7 +18,7 @@ def load_table(table_name):
         .option("driver", "org.postgresql.Driver") \
         .load()
 
-# 4. GRAB ALL INGREDIENTS (Fast because PySpark is lazy!)
+
 print("Loading all database blueprints...")
 df_film = load_table("film")
 df_category = load_table("category")
