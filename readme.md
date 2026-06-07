@@ -1,5 +1,3 @@
-readme_content = """# PySpark Pagila Data Analysis
-
 ## Overview
 This project demonstrates data engineering and analysis skills using **PySpark** and **PostgreSQL**. It connects to a local PostgreSQL instance hosting the [Pagila](https://github.com/devrimgunduz/pagila) database (a PostgreSQL port of the Sakila sample database) via JDBC, and performs various complex data aggregations, joins, and window functions to extract business insights.
 
